@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 class RegisterController extends Controller
 {
     public  function register(){
-        return view('doctor.auth.register');
+        if (\View::exists('doctor.auth.register')){
+
+            return view('doctor.auth.register');
+        }
+        abort(404);
+
     }
 }
