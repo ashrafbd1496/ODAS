@@ -35,25 +35,47 @@
                 </div>
                 <div class="login-right">
                     <div class="login-right-wrap">
-                        <h1>Doctor Register</h1>
+                        <h1>{{ __('Doctor Register') }}</h1>
                         <p class="account-subtitle">Access to Doctor dashboard</p>
 
                         <!-- Form -->
-                        <form action="https://dreamguys.co.in/demo/doccure/admin/login.html">
+                        <form action="{{ route('doctor.processRegister') }}" method="POST">
+                            @csrf
+
                             <div class="form-group">
-                                <input class="form-control" type="text" placeholder="Name">
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" autocomplete="name" autofocus placeholder="Name">
+
+                                @error('name')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
                             <div class="form-group">
-                                <input class="form-control" type="text" placeholder="Email">
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" autocomplete="email" placeholder="Email">
+
+                                @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
                             <div class="form-group">
-                                <input class="form-control" type="text" placeholder="Password">
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" autocomplete="new-password" placeholder="Password">
+
+                                @error('password')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
                             <div class="form-group">
-                                <input class="form-control" type="text" placeholder="Confirm Password">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" autocomplete="new-password" placeholder="Confirm Password">
                             </div>
                             <div class="form-group mb-0">
-                                <button class="btn btn-primary btn-block" type="submit">Register</button>
+                                <button type="submit" class="btn btn-primary">
+                                    {{ __('Register') }}
+                                </button>
                             </div>
                         </form>
                         <!-- /Form -->
@@ -92,3 +114,4 @@
 </body>
 
 </html>
+

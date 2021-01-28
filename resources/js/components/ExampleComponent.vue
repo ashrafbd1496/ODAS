@@ -16,8 +16,30 @@
 
 <script>
     export default {
+        props: ['test'],
+        data(){
+            return {
+
+            }
+        },
+        methods: {
+
+        },
+        computed: {
+
+        },
         mounted() {
-            console.log('Component mounted.')
-        }
+            console.log('loaded from created property');
+        },
+        created(){
+            console.log(this.test);
+        },
+
+        watch: {
+            test: function(){
+
+            }
+        },
+
     }
 </script>
