@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Doctor\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\DoctorRegister;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
 
@@ -17,15 +18,8 @@ class RegisterController extends Controller
 
     }
 
-    public function processRegister(Request $request){
-        $request->validate([
-            'name' =>'required',
-            'email' =>'required|unique:doctors',
-            'password' =>['required','strign','min:6','confirmed'],
-
-//            'password' =>'required|regex:/^.*(?=.{3,})(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\d\x])(?=.*[!$#%]).*$/',
-//            'confirmed',
-        ]);
+    public function processRegister(DoctorRegister $request){
+        return $request->validated();
     }
 
 
