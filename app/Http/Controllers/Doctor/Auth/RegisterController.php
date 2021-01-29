@@ -19,7 +19,12 @@ class RegisterController extends Controller
     }
 
     public function processRegister(DoctorRegister $request){
-        return $request->validated();
+
+        return $request->only('name');
+//        return $request->all();
+
+//        return $request->except(['_token','password_confirmation','password']);
+//        return $request->validated();
     }
 
 
