@@ -27,7 +27,7 @@ class RegisterController extends Controller
             'password'=>$request->input('password')
         ]);
 
-        return redirect()->route('doctor.login');
+        return redirect()->route('doctor.login')->with('message','Registration Successfull, Please Login !');
 //        return redirect()->action([LoginController::class, 'login']);
 
     }

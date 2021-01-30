@@ -37,7 +37,10 @@
                     <div class="login-right-wrap">
                         <h1>{{ __('Doctor Login') }}</h1>
                         <p class="account-subtitle">Login to Doctor dashboard</p>
-
+                        @if(session()->has('message'))
+                            <span>{{session()->get('message')}}</span>
+                        @endif
+                        <br>
                         <!-- Form -->
                         <form action="{{ route('doctor.login') }}" method="POST">
                             @csrf
