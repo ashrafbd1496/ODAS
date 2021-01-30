@@ -27,7 +27,9 @@ class RegisterController extends Controller
             'password'=>$request->input('password')
         ]);
 
-//        Doctor::create($request->validated());
+        return redirect()->route('doctor.login');
+//        return redirect()->action([LoginController::class, 'login']);
+
     }
 
 

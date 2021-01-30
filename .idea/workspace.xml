@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab0f03d4-e4aa-4b77-a892-e1fd4ab811c8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Doctor/Auth/LoginController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/doctor/auth/login.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Doctor/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Doctor/Auth/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Doctor.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Doctor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/doctor.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/doctor.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,6 +157,9 @@
       <recent name="I:\XAMPP\htdocs\PhpLaravel\ODAS\resources\views" />
       <recent name="I:\XAMPP\htdocs\PhpLaravel\ODAS\resources\views\auth" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="I:\XAMPP\htdocs\PhpLaravel\ODAS\resources\views\doctor\auth" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -175,7 +180,7 @@
       <workItem from="1610344309955" duration="16453000" />
       <workItem from="1610984895194" duration="18911000" />
       <workItem from="1611902040546" duration="2519000" />
-      <workItem from="1611923566029" duration="3074000" />
+      <workItem from="1611923566029" duration="6125000" />
     </task>
     <servers />
   </component>
