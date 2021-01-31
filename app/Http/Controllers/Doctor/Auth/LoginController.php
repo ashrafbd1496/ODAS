@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Doctor\Auth;
 
-use App\Helper\Helper;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
 
 class LoginController extends Controller
@@ -21,7 +21,22 @@ class LoginController extends Controller
 
    public function processLogin(Request $request){
 
-        return Helper::test();
+       $credentials = $request->validate([
+           'email'=>'required',
+           'password'=>'required',
+       ]);
+
+       if (Auth::guard('doctor')->attempt($credentials)){
+           
+           if (isDoctorActive($request->email)){
+
+               //active doctor
+               return 'active';
+           }
+           //inactive doctor
+           return 'inactive';
+       }
+
    }
 
 
