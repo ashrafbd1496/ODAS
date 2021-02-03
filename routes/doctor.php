@@ -1,7 +1,10 @@
 <?php
 
+use Whoops\Run;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-
+use App\Providers\RouteServiceProvider;
+use App\Http\Controllers\Doctor\Auth\LoginController;
 
 Route::get('test',function (){
     return "test";
@@ -19,4 +22,30 @@ Route::name('doctor.')->namespace('Doctor')->prefix('doctor')->group(function(){
        Route::get('/login','LoginController@login')->name('login');
         Route::post('/login','LoginController@processLogin');
     });
+
+    Route::namespace('Auth')->middleware('auth:doctor')->group(function(){
+
+        Route::get('/home',function(){
+
+            if(Auth::guard('doctor')->check()){
+
+                return view('doctor.auth.home');
+            }
+            abort(404);
+            
+        });
+
+        Route::post('/logout',function(){
+            Auth::guard('doctor')->logout();
+
+            return redirect()->action([
+                LoginController::class,'login'
+            ]);
+
+        })->name('logout');
+
+
+    });
+
+
 });

@@ -7,7 +7,7 @@
                 <img src="{{asset('admin/assets/img/logo.png')}}" alt="Logo">
             </a>
             <a href="index.html" class="logo logo-small">
-                <img src="admin/assets/img/logo-small.png" alt="Logo" width="30" height="30">
+                <img src="{{asset('admin/assets/img/logo-small.png')}}" alt="Logo" width="30" height="30">
             </a>
         </div>
         <!-- /Logo -->
@@ -48,7 +48,7 @@
                                 <a href="#">
                                     <div class="media">
 												<span class="avatar avatar-sm">
-													<img class="avatar-img rounded-circle" alt="User Image" src="admin/assets/img/doctors/doctor-thumb-01.jpg">
+													<img class="avatar-img rounded-circle" alt="User Image" src="{{asset('admin/assets/img/doctors/doctor-thumb-01.jpg') }}">
 												</span>
                                         <div class="media-body">
                                             <p class="noti-details"><span class="noti-title">Dr. Ruby Perrin</span> Schedule <span class="noti-title">her appointment</span></p>
@@ -61,7 +61,7 @@
                                 <a href="#">
                                     <div class="media">
 												<span class="avatar avatar-sm">
-													<img class="avatar-img rounded-circle" alt="User Image" src="admin/assets/img/patients/patient1.jpg">
+													<img class="avatar-img rounded-circle" alt="User Image" src="{{ asset('admin/assets/img/patients/patient1.jpg') }}">
 												</span>
                                         <div class="media-body">
                                             <p class="noti-details"><span class="noti-title">Charlene Reed</span> has booked her appointment to <span class="noti-title">Dr. Ruby Perrin</span></p>
@@ -108,12 +108,12 @@
             <!-- User Menu -->
             <li class="nav-item dropdown has-arrow">
                 <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                    <span class="user-img"><img class="rounded-circle" src="admin/assets/img/profiles/avatar-01.jpg" width="31" alt="Ryan Taylor"></span>
+                    <span class="user-img"><img class="rounded-circle" src="{{ asset('admin/assets/img/profiles/avatar-01.jpg') }}" width="31" alt="Ryan Taylor"></span>
                 </a>
                 <div class="dropdown-menu">
                     <div class="user-header">
                         <div class="avatar avatar-sm">
-                            <img src="admin/assets/img/profiles/avatar-01.jpg" alt="User Image" class="avatar-img rounded-circle">
+                            <img src="{{ asset('admin/assets/img/profiles/avatar-01.jpg') }}" alt="User Image" class="avatar-img rounded-circle">
                         </div>
                         <div class="user-text">
                             <h6>Ryan Taylor</h6>
@@ -122,7 +122,12 @@
                     </div>
                     <a class="dropdown-item" href="profile.html">My Profile</a>
                     <a class="dropdown-item" href="settings.html">Settings</a>
-                    <a id="logout-button" class="dropdown-item" href="login.html">Logout</a>
+                    <a id="logout-button" class="dropdown-item" href="{{ route('doctor.logout') }}" onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();"> {{ __('Logout') }}</a>
+                    
+                    <form id="logout-form" action="{{ route('doctor.logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
                 </div>
             </li>
             <!-- /User Menu -->

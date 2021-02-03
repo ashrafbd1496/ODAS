@@ -76,7 +76,7 @@ return [
         ],
         'doctors' => [
             'driver' => 'eloquent',
-            'model' => App\Models\User::class,
+            'model' => App\Models\Doctor::class,
         ],
 
         // 'users' => [
