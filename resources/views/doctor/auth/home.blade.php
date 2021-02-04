@@ -10,7 +10,7 @@
             <div class="page-header">
                 <div class="row">
                     <div class="col-sm-12">
-                        <h3 class="page-title">Welcome Doctor !</h3>
+                        <h3 class="page-title">Welcome Doctor {{Auth::guard('doctor')->user()->name}} !</h3>
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item active">Doctor Dashboard</li>
                         </ul>

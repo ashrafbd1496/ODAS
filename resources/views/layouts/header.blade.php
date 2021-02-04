@@ -83,7 +83,7 @@
                                     </div>
                                 </a>
                             </li>
-                            <li class="notification-message">
+                            <li class="notification-message">``
                                 <a href="#">
                                     <div class="media">
 												<span class="avatar avatar-sm">

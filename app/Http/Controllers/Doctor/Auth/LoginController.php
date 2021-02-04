@@ -30,9 +30,15 @@ class LoginController extends Controller
         ]);
        // return  $request->validate();
         if(Auth::guard('doctor')->attempt($credentials)){
+
+            Doctor::whereEmail($request->email)->update([
+                'last_login' =>now()
+            ]);
+
             if(isDoctorActive($request->input('email'))){
-               // return redirect(RouteServiceProvider::DOCTOR);
-               return redirect('doctor/home');
+
+            return redirect(RouteServiceProvider::DOCTOR);
+            //    return redirect('doctor/home');
             }else{
                 Auth::guard('doctor')->logout();
                 return redirect()->back()->with('message','Your Status is Inactive.');
