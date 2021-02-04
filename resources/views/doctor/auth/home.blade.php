@@ -12,7 +12,11 @@
                     <div class="col-sm-12">
                         <h3 class="page-title">Welcome Doctor {{Auth::guard('doctor')->user()->name}} !</h3>
                         <ul class="breadcrumb">
-                            <li class="breadcrumb-item active">Doctor Dashboard</li>
+                            <li class="breadcrumb-item active">
+                                
+                            Your Last Login:{{ \Carbon\Carbon::parse(Auth::guard('doctor')->user()->last_login)->toFormattedDateString() }}
+
+                            </li>
                         </ul>
                     </div>
                 </div>
