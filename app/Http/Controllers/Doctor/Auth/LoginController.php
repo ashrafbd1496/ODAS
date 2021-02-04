@@ -23,12 +23,10 @@ class LoginController extends Controller
         abort(Response::HTTP_NOT_FOUND);
     }
 
-    public function processLogin(Request $request){
-        $credentials = $request->validate([
-            'email'=>'required',
-            'password'=>'required'
-        ]);
-       // return  $request->validate();
+    public function processLogin(LoginRequest $request){
+        
+        $credentials = $request->validated();
+       
         if(Auth::guard('doctor')->attempt($credentials)){
 
             Doctor::whereEmail($request->email)->update([
