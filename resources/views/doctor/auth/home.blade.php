@@ -13,8 +13,8 @@
                         <h3 class="page-title">Welcome Doctor {{Auth::guard('doctor')->user()->name}} !</h3>
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item active">
-                                
-                            Your Last Login:{{ \Carbon\Carbon::parse(Auth::guard('doctor')->user()->last_login)->toFormattedDateString() }}
+
+                            Your Last Login was:{{ \Carbon\Carbon::parse(Auth::guard('doctor')->user()->last_login)->toFormattedDateString() }}
 
                             </li>
                         </ul>

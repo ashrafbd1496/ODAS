@@ -33,7 +33,7 @@ Route::name('doctor.')->namespace('Doctor')->prefix('doctor')->group(function(){
             }
             abort(404);
             
-        });
+        })->name('home');
 
         Route::post('/logout',function(){
             Auth::guard('doctor')->logout();
@@ -44,6 +44,8 @@ Route::name('doctor.')->namespace('Doctor')->prefix('doctor')->group(function(){
 
         })->name('logout');
 
+        Route::get('/change/password','ChangePasswordController@index')->name('change.password');
+        Route::patch('/change/password','ChangePasswordController@change_password');
 
     });
 

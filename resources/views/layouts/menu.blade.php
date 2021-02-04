@@ -7,7 +7,7 @@
                         <span>Main</span>
                     </li>
                     <li class="active">
-                        <a href="{{route('home')}}"><i class="fe fe-home"></i> <span>Dashboard</span></a>
+                        <a href="{{route('doctor.home')}}"><i class="fe fe-home"></i> <span>Home</span></a>
                     </li>
                     <li class="submenu">
                         <a href="#"><i class="fe fe-document"></i> <span> Post</span> <span class="menu-arrow"></span></a>

@@ -121,7 +121,7 @@
                         </div>
                     </div>
                     <a class="dropdown-item" href="profile.html">My Profile</a>
-                    <a class="dropdown-item" href="settings.html">Settings</a>
+                    <a class="dropdown-item" href="{{ route('doctor.change.password') }}">Change Password</a>
                     <a id="logout-button" class="dropdown-item" href="{{ route('doctor.logout') }}" onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();"> {{ __('Logout') }}</a>
                     
