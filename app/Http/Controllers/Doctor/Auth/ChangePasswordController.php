@@ -13,9 +13,14 @@ class ChangePasswordController extends Controller
    }
 
    public function change_password(Request $request){
-       retun Auth::guard('doctor')->id();
+
+       Auth::guard('doctor')->id();
+
+    //    return Auth::guard('doctor')->user()->id;
+
+
    }
 
 
 
-}
+}//end of the class

@@ -35,7 +35,7 @@
 								<p class="account-subtitle">Reset Password</p>
 								
 								<!-- Form -->
-								<form action="{{ route('doctor.change.password') }}" method="POST">
+								<form action="{{ route('doctor.change.password') }}" method="POST" id="doctor_update_password">
                                     @csrf
 
                                     @method('PATCH')
@@ -44,7 +44,7 @@
 										<input id="oldpassword" name="oldpassword" class="form-control" type="password" placeholder="Old Password">
                                     </div>
                                     <div class="form-group">
-										<input name="oldpassword" class="form-control" type="password" placeholder="New Password">
+										<input name="password" class="form-control" type="password" placeholder="New Password">
                                     </div>
                                     <div class="form-group">
 										<input  name="password_confirmation" class="form-control" type="password" placeholder="Confirm Password">
@@ -72,3 +72,39 @@
     <!-- /Page Wrapper -->
 
 @endsection
+
+@push('script')
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        //Validate form data
+        $('#doctor_update_password').validate({ 
+        rules: {
+            oldpassword: {
+                required: true
+            },
+            password: {
+                required: true,
+                minlength: 6
+            },
+            password_confirmation: {
+                required: true,
+                equalTo: '#password'
+            },
+        },
+          errorElement: 'span',
+          errorPlacement: function (error, element) {
+            error.addClass('invalid-feedback');
+            element.closest('.form-group').append(error);
+          },
+          highlight: function (element, errorClass, validClass) {
+            $(element).addClass('is-invalid');
+          },
+          unhighlight: function (element, errorClass, validClass) {
+            $(element).removeClass('is-invalid').addClass('is-valid');
+          }
+        });
+    });
+</script>
+@endpush

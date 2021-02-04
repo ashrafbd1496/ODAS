@@ -22,6 +22,8 @@
 
     @include('layouts.partials.script')
 
+    @stack('script')
+
 </body>
 
 </html>
