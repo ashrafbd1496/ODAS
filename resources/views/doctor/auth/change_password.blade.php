@@ -1,5 +1,16 @@
 @extends('layouts.app')
 
+@push('style')
+
+<style>
+    .is-valid{
+    border:1px soli green;
+}
+</style>
+
+
+@endpush
+
 @section('main-content')
     <!-- Page Wrapper -->
     <div class="page-wrapper">
@@ -31,8 +42,9 @@
                         </div>
                         <div class="login-right">
 							<div class="login-right-wrap">
-								<h1>Forgot Password?</h1>
-								<p class="account-subtitle">Reset Password</p>
+                                <h1>Forgot Password?</h1>
+                                
+								@includeif('admin.success.message')
 								
 								<!-- Form -->
 								<form action="{{ route('doctor.change.password') }}" method="POST" id="doctor_update_password">
@@ -44,7 +56,7 @@
 										<input id="oldpassword" name="oldpassword" class="form-control" type="password" placeholder="Old Password">
                                     </div>
                                     <div class="form-group">
-										<input name="password" class="form-control" type="password" placeholder="New Password">
+										<input name="password" id="password" class="form-control" type="password" placeholder="New Password">
                                     </div>
                                     <div class="form-group">
 										<input  name="password_confirmation" class="form-control" type="password" placeholder="Confirm Password">
