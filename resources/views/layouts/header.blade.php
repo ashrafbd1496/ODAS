@@ -120,11 +120,11 @@
                             <p class="text-muted mb-0">Administrator</p>
                         </div>
                     </div>
-                    <a class="dropdown-item" href="profile.html">My Profile</a>
+                    <a class="dropdown-item" href="{{route('doctor.profile',Auth::guard('doctor')->id())}}">My Profile</a>
                     <a class="dropdown-item" href="{{ route('doctor.change.password') }}">Change Password</a>
                     <a id="logout-button" class="dropdown-item" href="{{ route('doctor.logout') }}" onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();"> {{ __('Logout') }}</a>
-                    
+
                     <form id="logout-form" action="{{ route('doctor.logout') }}" method="POST" class="d-none">
                         @csrf
                     </form>

@@ -32,7 +32,7 @@ Route::name('doctor.')->namespace('Doctor')->prefix('doctor')->group(function(){
                 return view('doctor.auth.home');
             }
             abort(404);
-            
+
         })->name('home');
 
         Route::post('/logout',function(){
@@ -44,8 +44,12 @@ Route::name('doctor.')->namespace('Doctor')->prefix('doctor')->group(function(){
 
         })->name('logout');
 
+        //Doctor Profile Related Routes
+
         Route::get('/change/password','ChangePasswordController@index')->name('change.password');
         Route::patch('/change/password','ChangePasswordController@change_password');
+
+        Route::get('/profile/{id}','ProfileController@index')->name('profile');
 
     });
 

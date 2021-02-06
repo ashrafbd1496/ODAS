@@ -2,17 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab0f03d4-e4aa-4b77-a892-e1fd4ab811c8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Models/Certificates.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Experiences.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_02_05_034815_create_certificates_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_02_05_034940_create_experiences_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/admin/assets/img/profiles/ashraf.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/success/message.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Doctor/Auth/ProfileController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/doctor/profile/profile.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Doctor/Auth/ChangePasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Doctor/Auth/ChangePasswordController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/doctor/auth/change_password.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/doctor/auth/change_password.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/doctor.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/doctor.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,7 +184,7 @@
       <workItem from="1612075396921" duration="7114000" />
       <workItem from="1612230225623" duration="97000" />
       <workItem from="1612579058008" duration="32000" />
-      <workItem from="1612579114507" duration="2872000" />
+      <workItem from="1612579114507" duration="4490000" />
     </task>
     <servers />
   </component>
