@@ -56,8 +56,8 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @if(!$designations-> isEmpty() )
-                                        @foreach($designations as $item)
+
+                                        @forelse($designations as $item)
                                         <tr role="row" class="odd">
                                             <td class="sorting_1">{{$loop->index+1}}</td>
                                             <td>
@@ -81,10 +81,9 @@
                                                 </div>
                                             </td>
                                         </tr>
-                                        @endforeach
-                                        @else
+                                        @empty
                                         <span>No Data</span>
-                                        @endif
+                                        @endforelse
                                     </tbody>
                                 </table>
                                         </div>
