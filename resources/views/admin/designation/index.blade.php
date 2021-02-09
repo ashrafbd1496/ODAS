@@ -56,7 +56,7 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @if(count($designations) > 0 )
+                                    @if(!$designations-> isEmpty() )
                                         @foreach($designations as $item)
                                         <tr role="row" class="odd">
                                             <td class="sorting_1">{{$loop->index+1}}</td>
