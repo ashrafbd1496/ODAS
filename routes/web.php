@@ -23,3 +23,13 @@ Route::get('/vue', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::namespace('Admin')->prefix('admin')->group(function(){
+
+    Route::name('admin.')->group(function(){
+
+        Route::get('designation','DesignationController@index')->name('designation.index');
+
+
+    });
+});

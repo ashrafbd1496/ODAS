@@ -108,7 +108,9 @@
             <!-- User Menu -->
             <li class="nav-item dropdown has-arrow">
                 <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                    <span class="user-img"><img class="rounded-circle" src="{{ asset('admin/assets/img/profiles/ashraf.jpg') }}" width="31" alt="{{ Auth::guard('doctor')->user()->name }}"></span>
+                    <span class="user-img"><img class="rounded-circle" src="{{ asset('admin/assets/img/profiles/ashraf.jpg') }}" width="31"
+{{--                                                alt="{{ Auth::guard('doctor')->user()->name }}">--}}
+                    </span>
                 </a>
                 <div class="dropdown-menu">
                     <div class="user-header">
@@ -116,11 +118,13 @@
                             <img src="{{ asset('admin/assets/img/profiles/ashraf.jpg') }}" alt="User Image" class="avatar-img rounded-circle">
                         </div>
                         <div class="user-text">
-                            <h6>{{ Auth::guard('doctor')->user()->name }}</h6>
+{{--                            <h6>{{ Auth::guard('doctor')->user()->name }}</h6>--}}
                             <p class="text-muted mb-0">Administrator</p>
                         </div>
                     </div>
-                    <a class="dropdown-item" href="{{route('doctor.profile',Auth::guard('doctor')->id())}}">My Profile</a>
+                    <a class="dropdown-item"
+{{--                       href="{{route('doctor.profile',Auth::guard('doctor')->id())}}">--}}
+                        My Profile</a>
                     <a class="dropdown-item" href="{{ route('doctor.change.password') }}">Change Password</a>
                     <a id="logout-button" class="dropdown-item" href="{{ route('doctor.logout') }}" onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();"> {{ __('Logout') }}</a>
