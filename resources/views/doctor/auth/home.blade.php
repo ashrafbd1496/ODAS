@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('doctor.layouts.doctor-app')
 
 @section('main-content')
     <!-- Page Wrapper -->
@@ -108,7 +108,7 @@
                     </div>
                 </div>
             </div>
-           
+
 
         </div>
     </div>

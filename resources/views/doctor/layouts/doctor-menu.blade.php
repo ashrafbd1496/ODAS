@@ -10,7 +10,7 @@
                         <a href="{{route('doctor.home')}}"><i class="fe fe-home"></i> <span>Home</span></a>
                     </li>
                     <li class="submenu">
-                        <a href="#"><i class="fe fe-document"></i> <span> Post</span> <span class="menu-arrow"></span></a>
+                        <a href="#"><i class="fe fe-document"></i> <span> Appointments</span> <span class="menu-arrow"></span></a>
                         <ul style="display: none;">
                             <li><a href="invoice-report.html">All Post</a></li>
                             <li><a href="invoice-report.html">Category</a></li>
