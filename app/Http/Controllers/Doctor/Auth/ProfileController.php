@@ -10,7 +10,12 @@ use Illuminate\Support\Facades\Auth;
 class ProfileController extends Controller
 {
    public function index(Doctor $doctor){
-       return $id = Auth::guard('doctor')->id();
-       return view('doctor.profile.profile');
+
+        $id = Auth::guard('doctor')->id();
+
+       return view('doctor.profile.profile',[
+
+            'doctor' =>$doctor::findOrFail($id),
+       ]);
    }
 }
