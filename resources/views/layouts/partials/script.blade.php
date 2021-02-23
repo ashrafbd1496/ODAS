@@ -15,3 +15,7 @@
 <!-- Custom JS -->
 <script  src="{{asset('admin/assets/js/script.js')}}"></script>
 <script  src="{{asset('admin/assets/js/customjs/script.js')}}"></script>
+
+<!--Sweet Alert js -->
+<script  src="{{asset('admin/assets/js/sweetAlert.js')}}"></script>
+

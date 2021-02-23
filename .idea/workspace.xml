@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab0f03d4-e4aa-4b77-a892-e1fd4ab811c8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/loader/loader.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Country.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_02_23_062410_create_countries_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/admin/assets/js/sweetAlert.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/doctor/profile/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/doctor/profile/profile.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/partials/script.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/partials/script.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,7 +188,7 @@
       <workItem from="1612230225623" duration="97000" />
       <workItem from="1612579058008" duration="32000" />
       <workItem from="1612579114507" duration="64687000" />
-      <workItem from="1613915647870" duration="2403000" />
+      <workItem from="1613915647870" duration="12016000" />
     </task>
     <servers />
   </component>

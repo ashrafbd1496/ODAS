@@ -101,7 +101,9 @@
 													<h5 class="card-title justify-content-between">
 														<span>Personal Details</span>
 
-                                                        <form action="">
+                                                        <form action="" method="POSt" enctype="multipart/form-data">
+                                                            @csrf
+                                                            @method('PATCH')
                                                             <div class="row">
                                                                 <div class="col-md-6">
 
@@ -126,12 +128,13 @@
                                                                         <input type="text" name="address" class="form-control" value="{{$doctor->address}}">
                                                                     </div>
                                                                     <div class="form-group">
-                                                                        {{--                                                                            <h5 class="form-title"><span>Country</span></h5>--}}
                                                                         <label for="">Country</label>
                                                                         <select name="country" id="country">
-                                                                            <option value="">Bangladesh</option>
-                                                                            <option value="">Pakistan</option>
-                                                                            <option value="">Turky</option>
+                                                                            <option value="0">Select Name</option>
+                                                                            @forelse(\App\Models\Country::select('id','name')->get() as $item)
+                                                                                <option value="{{$item->id}}" {{$doctor->country_id == $item->id ? 'selected' : ''}}>{{$item->name}}</option>
+                                                                            @empty
+                                                                            @endforelse
                                                                         </select>
                                                                     </div>
                                                                     <div class="form-group">
@@ -143,9 +146,7 @@
                                                                         <input type="checkbox" name="is_offday" id="is_offday" class="mr-2" value="1"{{$doctor->is_offday ==1 ? 'checked' : ''}}>
 
                                                                         <select name="is_offday" id="is_offday">
-                                                                            <option value="">Friday</option>
-                                                                            <option value="">Saturday</option>
-                                                                            <option value="">Sunday</option>
+
                                                                         </select>
                                                                     </div>
                                                                     <div class="form-group hidden_break_time" style="display: none">
@@ -194,7 +195,8 @@
                                                                         <input type="checkbox" id="experience" class="" name="any_experience">
                                                                     </div>
                                                                     <img src="{{asset('loader/loader.gif')}}" id="loader" style="display:none">
-                                                                    <div class="doctor_experience" style="display:none">
+
+                                                                    <div class="doctor_experience clone_experience" style="display:none">
                                                                         <div class="form-group">
                                                                             <label>Start Date</label>
                                                                             <input type="date" class="form-control" name="start_date">
@@ -206,6 +208,41 @@
                                                                         <div class="form-group">
                                                                             <label>Clinic Name</label>
                                                                             <input type="text" class="form-control" name="clinic_name" id="clinic_name">
+                                                                        </div>
+
+                                                                        <div class="clone" style="display: none;">
+                                                                            <div class="control-group">
+                                                                                <h5>Experience</h5>
+                                                                                <div class="form-group">
+                                                                                    <label>Start Date</label>
+                                                                                    <input type="date" class="form-control" name="start_date">
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <label>End Date</label>
+                                                                                    <input type="date" class="form-control" name="start_date">
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <label>Clinic Name</label>
+                                                                                    <input type="text" class="form-control" name="clinic_name" id="clinic_name">
+                                                                                </div>
+                                                                                <button class="btn btn-danger btn-sm btn-remove" type="button"><i class="fa fa-window-close"></i> Remove</button>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <button id="addMoreExperience" class="btn btn-sm btn-success pull-right">Add More Experience</button>
+                                                                    </div>
+
+                                                                    <label style="margin:15px 0;" for="">Upload Certificate<small> (You can choose one or multiple)</small></label>
+
+                                                                    <div class="input-group control-group img_div form-group" >
+                                                                        <input type="file" name="image[]" class="form-control">
+                                                                        <button class="btn btn-dark btn-sm btn-add-more" type="button"><i class="fa fa-plus-circle"></i>Add More</button>
+                                                                    </div>
+
+                                                                    <div class="documents hide" style="display: none;">
+                                                                        <div class="control-group input-group form-group">
+                                                                            <input type="file" name="image[]" class="form-control">
+                                                                            <button class="btn btn-danger btn-sm documents-remove" type="button"><i class="fa fa-window-close"></i>Remove</button>
                                                                         </div>
                                                                     </div>
 
@@ -318,6 +355,35 @@
                         $('.doctor_experience').fadeOut();
                     },1000)
                 }
+            });
+
+            //clone experiences
+            $('body').on('click','#addMoreExperience',function(){
+                var html = $(".clone").html();
+                $(".clone_experience").after(html);
+            })
+
+            //remove clone
+            $("body").on("click",".btn-remove",function(){
+                Swal.fire({
+                    title: 'Do you want to remove this experience?',
+                    showDenyButton: true,
+                    confirmButtonText: `Yes`,
+                    denyButtonText: `No`,
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $(this).parents(".control-group").remove();
+                    }
+                })
+            });
+
+            //Documents addmore code goes here
+            $(".btn-add-more").click(function(){
+                var html = $(".documents").html();
+                $(".img_div").after(html);
+            });
+            $("body").on("click",".documents-remove",function(){
+                $(this).parents(".control-group").remove();
             });
 
             //Validate form data
