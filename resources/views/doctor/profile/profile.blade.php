@@ -145,13 +145,22 @@
                                                                         <label class="mr-2">Any Offday</label>
                                                                         <input type="checkbox" name="is_offday" id="is_offday" class="mr-2" value="1"{{$doctor->is_offday ==1 ? 'checked' : ''}}>
 
-                                                                        <select name="is_offday" id="is_offday">
-
-                                                                        </select>
                                                                     </div>
                                                                     <div class="form-group hidden_break_time" style="display: none">
-                                                                        <label>Break Time</label>
-                                                                        <input type="number" name="break_time" class="form-control" value="{{$doctor->break_time}}">
+                                                                        <select name="" id="">
+                                                                            <option value="Friday">Friday</option>
+                                                                            <option value="Saturday">Saturday</option>
+                                                                            <option value="Sunday">Sunday</option>
+                                                                            <option value="Monday">Monday</option>
+                                                                            <option value="Tuesday">Tuesday</option>
+                                                                            <option value="Wednesday">Wednesday</option>
+                                                                            <option value="Thursday">Thursday</option>
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label class="mr-2">Break Time</label>
+                                                                        <input type="text" name="break_time" class="form-control" value="{{ $doctor->break_time }}" placeholder="ex.. 4.00 pm to 5.00 pm">
+
                                                                     </div>
                                                                     <div class="form-group">
                                                                         <label>Education</label>
@@ -248,7 +257,7 @@
 
                                                                 </div>
                                                             </div>
-                                                            <button type="submit" class="btn btn-primary btn-block">Save Changes</button>
+                                                            <button type="submit" class="btn btn-primary btn-sm">Update Profile</button>
                                                         </form>
 
 												</div>
