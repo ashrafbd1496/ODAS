@@ -119,9 +119,12 @@
                                                                         <label>Assistant Phone</label>
                                                                         <input type="text" name="phone" class="form-control" value="{{$doctor->assistant_phone}}">
                                                                     </div>
+                                                                    <div class="form-group " id="image_hidden">
+                                                                        <img id="image_preview_container" src="" style="max-height: 100px;border-radius:50%;">
+                                                                    </div>
                                                                     <div class="form-group">
                                                                         <label>Avatar</label>
-                                                                        <input type="file" name="avatar" class="form-control" value="{{$doctor->avatar}}">
+                                                                        <input type="file" name="avatar" id="avatar" class="form-control">
                                                                     </div>
                                                                     <div class="form-group">
                                                                         <label for="">Address</label>
@@ -393,6 +396,18 @@
             });
             $("body").on("click",".documents-remove",function(){
                 $(this).parents(".control-group").remove();
+            });
+
+            //instant avatar preview display
+            $('#image_hidden').hide();
+
+            $(document).on('change','#avatar',function(){
+                $('#image_hidden').fadeIn();
+                let reader = new FileReader();
+                reader.onload = (e) => {
+                    $('#image_preview_container').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(this.files[0]);
             });
 
             //Validate form data
