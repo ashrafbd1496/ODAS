@@ -4,8 +4,7 @@
     <list default="true" id="ab0f03d4-e4aa-4b77-a892-e1fd4ab811c8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Doctor/Auth/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Doctor/Auth/ProfileController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/doctor/profile/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/doctor/profile/profile.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/doctor.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/doctor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,7 +186,7 @@
       <workItem from="1612579058008" duration="32000" />
       <workItem from="1612579114507" duration="64687000" />
       <workItem from="1613915647870" duration="17317000" />
-      <workItem from="1614183628924" duration="6295000" />
+      <workItem from="1614183628924" duration="8148000" />
     </task>
     <servers />
   </component>

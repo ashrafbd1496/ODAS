@@ -27,7 +27,15 @@ class ProfileController extends Controller
        $counter = sizeof($experience);
 
        for ($i = 0;$i <$counter;$i++){
-           return $request->start_date[$i];
+           $request->start_date[$i];
+
+           $date1 = $request->start_date[$i];
+           $date2 = $request->end_date[$i];
+
+           return differenceBetweenTwoDate($date1,$date2);
+
+
+
        }
    }
 }
