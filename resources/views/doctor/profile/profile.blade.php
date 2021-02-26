@@ -101,7 +101,7 @@
 													<h5 class="card-title justify-content-between">
 														<span>Personal Details</span>
 
-                                                        <form action="" method="POSt" enctype="multipart/form-data">
+                                                        <form action="{{ route('doctor.profile',$doctor->id) }}" method="POSt" enctype="multipart/form-data">
                                                             @csrf
                                                             @method('PATCH')
                                                             <div class="row">
@@ -211,15 +211,15 @@
                                                                     <div class="doctor_experience clone_experience" style="display:none">
                                                                         <div class="form-group">
                                                                             <label>Start Date</label>
-                                                                            <input type="date" class="form-control" name="start_date">
+                                                                            <input type="date" class="form-control" name="start_date[]">
                                                                         </div>
                                                                         <div class="form-group">
                                                                             <label>End Date</label>
-                                                                            <input type="date" class="form-control" name="start_date">
+                                                                            <input type="date" class="form-control" name="end_date[]">
                                                                         </div>
                                                                         <div class="form-group">
                                                                             <label>Clinic Name</label>
-                                                                            <input type="text" class="form-control" name="clinic_name" id="clinic_name">
+                                                                            <input type="text" class="form-control" name="clinic_name[]" id="clinic_name">
                                                                         </div>
 
                                                                         <div class="clone" style="display: none;">
@@ -227,15 +227,15 @@
                                                                                 <h5>Experience</h5>
                                                                                 <div class="form-group">
                                                                                     <label>Start Date</label>
-                                                                                    <input type="date" class="form-control" name="start_date">
+                                                                                    <input type="date" class="form-control" name="start_date[]">
                                                                                 </div>
                                                                                 <div class="form-group">
                                                                                     <label>End Date</label>
-                                                                                    <input type="date" class="form-control" name="start_date">
+                                                                                    <input type="date" class="form-control" name="end_date[]">
                                                                                 </div>
                                                                                 <div class="form-group">
                                                                                     <label>Clinic Name</label>
-                                                                                    <input type="text" class="form-control" name="clinic_name" id="clinic_name">
+                                                                                    <input type="text" class="form-control" name="clinic_name[]" id="clinic_name">
                                                                                 </div>
                                                                                 <button class="btn btn-danger btn-sm btn-remove" type="button"><i class="fa fa-window-close"></i> Remove</button>
                                                                             </div>
@@ -247,13 +247,13 @@
                                                                     <label style="margin:15px 0;" for="">Upload Certificate<small> (You can choose one or multiple)</small></label>
 
                                                                     <div class="input-group control-group img_div form-group" >
-                                                                        <input type="file" name="image[]" class="form-control">
+                                                                        <input type="file" name="documents[]" class="form-control">
                                                                         <button class="btn btn-dark btn-sm btn-add-more" type="button"><i class="fa fa-plus-circle"></i>Add More</button>
                                                                     </div>
 
                                                                     <div class="documents hide" style="display: none;">
                                                                         <div class="control-group input-group form-group">
-                                                                            <input type="file" name="image[]" class="form-control">
+                                                                            <input type="file" name="documents[]" class="form-control">
                                                                             <button class="btn btn-danger btn-sm documents-remove" type="button"><i class="fa fa-window-close"></i>Remove</button>
                                                                         </div>
                                                                     </div>

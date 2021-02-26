@@ -18,4 +18,16 @@ class ProfileController extends Controller
             'doctor' =>$doctor::findOrFail($id),
        ]);
    }
+
+   public function profile_update(Request $request,$id){
+       $experience = array_filter($request->start_date, function($filter){
+           return ! empty($filter);
+       });
+
+       $counter = sizeof($experience);
+
+       for ($i = 0;$i <$counter;$i++){
+           return $request->start_date[$i];
+       }
+   }
 }
